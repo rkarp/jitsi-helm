@@ -19,6 +19,7 @@ spec:
       {{- end }}
       {{- with mergeOverwrite .Values.global.podAnnotations .Values.podAnnotations }}
       annotations:
+        rollme: {{ randAlphaNum 10 | quote }}
       {{- range $annotation, $value := . }}
         {{ $annotation }}: {{ $value }}
       {{- end }}
